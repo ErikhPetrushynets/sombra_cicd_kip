@@ -1,10 +1,10 @@
 module.exports = function(config) {
     config.set({
-        reporters: ['progress', 'junit'],
-        junitReporter: {
-          outputDir: 'test-results',  // Specify the directory for JUnit XML reports
-          outputFile: 'junit-results.xml',  // Specify the file name
-          useBrowserName: false
-        },
+            reporters: ['junit'],
+            junitReporter: {
+              outputDir: process.env.JUNIT_REPORT_PATH,
+              outputFile: process.env.JUNIT_REPORT_NAME,
+              useBrowserName: false
+            },
     });
   };
