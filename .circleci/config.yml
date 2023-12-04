@@ -23,7 +23,9 @@ jobs:
           paths:
             - "node_modules"
       - checkout
-      - run: npm install karma --save-dev
+      - run: npm install karma --save-dev 
+      - run: npm install -g karma-cli --force
+      - run: npm install karma-junit-reporter --save-dev
       - run: mkdir ~/junit
       - run:
           command: karma start ./karma.conf.js
