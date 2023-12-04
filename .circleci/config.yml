@@ -4,7 +4,6 @@ orbs:
 jobs:
   build:
     working_directory: ~/ng-project
-  test:
     docker:
       - image: cimg/node:20.4.0-browsers
     steps:
