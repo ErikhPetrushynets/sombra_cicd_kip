@@ -22,7 +22,14 @@ jobs:
           key: ng-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
+     - checkout
+      - run: npm install
       - run: mkdir ~/junit
-      - run: karma start ./karma.conf.js
+      - run:
+          command: karma start ./karma.conf.js
+          environment:
+            JUNIT_REPORT_PATH: ./junit/
+            JUNIT_REPORT_NAME: test-results.xml
+          when: always
       - store_test_results:
           path: ./junit
