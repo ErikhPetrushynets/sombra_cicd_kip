@@ -25,6 +25,8 @@ jobs:
       - run:
           name: Create test-results directory
           command: mkdir -p ~/ng-project/test-results
-      - run: npm run test
+      - run:
+          name: Run tests and generate JUnit reports
+          command: npm test
       - store_test_results:
-          path: test-results
+          path: ~/ng-project/test-results
