@@ -1,11 +1,11 @@
 module.exports = function(config) {
     config.set({
-        reporters: ['junit'],
-        junitReporter: {
-          outputDir: process.env.JUNIT_REPORT_PATH,
-          outputFile: process.env.JUNIT_REPORT_NAME,
-          useBrowserName: false
-        },
+      reporters: ['progress', 'junit'],
+      junitReporter: {
+        outputDir: './junit/',
+        outputFile: 'test-results.xml',
+        useBrowserName: 'Chrome',
+      },
       plugins: [
         'karma-junit-reporter'
       ],
