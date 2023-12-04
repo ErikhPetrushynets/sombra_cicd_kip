@@ -7,4 +7,5 @@ module.exports = function(config) {
               useBrowserName: false
             },
     });
+    
   };
